@@ -1,0 +1,13 @@
+[book]
+authors = ["Jérome Eertmans"]
+language = "en"
+multilingual = false
+src = "src"
+title = "mdBook-Blog"
+
+[rust]
+edition = "2021"
+
+[preprocessor.blog]
+before = ["links"]
+sort-by = "newe"

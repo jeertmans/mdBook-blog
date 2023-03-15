@@ -1,0 +1,30 @@
+[package]
+name = "mdbook-blog"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "mdBook preprocessor to create Blog posts"
+
+[lib]
+name = "mdbook_blog"
+path = "src/lib.rs"
+
+[[bin]]
+name = "mdbook-blog"
+path = "src/bin.rs"
+
+[dependencies]
+chrono = "0.4.24"
+clap = { version = "^4.1.8", features = ["derive", "wrap_help"] }
+env_logger = "0.10.0"
+log = "0.4.17"
+mdbook = "0.4"
+semver = "^1"
+serde = { version = "^1", features = ["derive"] }
+serde_json = "^1"
+toml = "0.5"
+walkdir = "2.3.2"
+
+[preprocessor.blog]
+renderer = ["html"]
+command = "cargo run --manifest-path ../Cargo.toml --quiet"
